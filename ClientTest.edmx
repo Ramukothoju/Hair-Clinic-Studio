@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HairStudioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="photo" Type="varchar" MaxLength="100" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AltMobileNumber" Type="varchar" MaxLength="20" />
+          <Property Name="EMail" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="RefreedBy" Type="varchar" MaxLength="50" />
+          <Property Name="GenralHelth" Type="varchar" MaxLength="100" />
+          <Property Name="Allergies" Type="varchar" MaxLength="20" />
+          <Property Name="ConditionFoHair" Type="varchar" MaxLength="30" />
+          <Property Name="HairLength" Type="varchar" MaxLength="30" />
+          <Property Name="Colour" Type="varchar" MaxLength="30" />
+          <Property Name="Density" Type="int" />
+          <Property Name="consultaionDate" Type="date" />
+          <Property Name="ReplacementDate" Type="date" />
+          <Property Name="System1" Type="varchar" MaxLength="20" />
+          <Property Name="System2" Type="varchar" MaxLength="20" />
+          <Property Name="System3" Type="varchar" MaxLength="20" />
+          <Property Name="Size" Type="varchar" MaxLength="50" />
+          <Property Name="LifeSpan" Type="varchar" MaxLength="40" />
+          <Property Name="price" Type="money" Nullable="false" />
+          <Property Name="AdvancePayment" Type="money" />
+          <Property Name="BalancePayment" Type="money" />
+          <Property Name="Dispersion" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Enqiry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+          <Property Name="Phone" Type="varchar" MaxLength="15" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="EQDate" Type="date" />
+          <Property Name="AvaliDate" Type="date" />
+          <Property Name="Discription" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Remaider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" />
+          <Property Name="Phone" Type="varchar" MaxLength="15" />
+          <Property Name="Gender" Type="varchar" MaxLength="5" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Feedback" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Singin">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="HairStudioModelStoreContainer">
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Enqiry" EntityType="Self.Enqiry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Remaider" EntityType="Self.Remaider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Singin" EntityType="Self.Singin" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HairStudioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="photo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AltMobileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EMail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RefreedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GenralHelth" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Allergies" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ConditionFoHair" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HairLength" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Colour" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Density" Type="Int32" />
+          <Property Name="consultaionDate" Type="DateTime" Precision="0" />
+          <Property Name="ReplacementDate" Type="DateTime" Precision="0" />
+          <Property Name="System1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="System2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="System3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LifeSpan" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="AdvancePayment" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BalancePayment" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Dispersion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="HairStudioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Singins" EntityType="HairStudioModel.Singin" />
+          <EntitySet Name="Enqiries" EntityType="HairStudioModel.Enqiry" />
+          <EntitySet Name="Remaiders" EntityType="HairStudioModel.Remaider" />
+        </EntityContainer>
+        <EntityType Name="Singin">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Enqiry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EQDate" Type="DateTime" Precision="0" />
+          <Property Name="AvaliDate" Type="DateTime" Precision="0" />
+          <Property Name="Discription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Remaider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Feedback" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HairStudioModelStoreContainer" CdmEntityContainer="HairStudioEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="HairStudioModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="AltMobileNumber" ColumnName="AltMobileNumber" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="RefreedBy" ColumnName="RefreedBy" />
+                <ScalarProperty Name="GenralHelth" ColumnName="GenralHelth" />
+                <ScalarProperty Name="Allergies" ColumnName="Allergies" />
+                <ScalarProperty Name="ConditionFoHair" ColumnName="ConditionFoHair" />
+                <ScalarProperty Name="HairLength" ColumnName="HairLength" />
+                <ScalarProperty Name="Colour" ColumnName="Colour" />
+                <ScalarProperty Name="Density" ColumnName="Density" />
+                <ScalarProperty Name="consultaionDate" ColumnName="consultaionDate" />
+                <ScalarProperty Name="ReplacementDate" ColumnName="ReplacementDate" />
+                <ScalarProperty Name="System1" ColumnName="System1" />
+                <ScalarProperty Name="System2" ColumnName="System2" />
+                <ScalarProperty Name="System3" ColumnName="System3" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="LifeSpan" ColumnName="LifeSpan" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="AdvancePayment" ColumnName="AdvancePayment" />
+                <ScalarProperty Name="BalancePayment" ColumnName="BalancePayment" />
+                <ScalarProperty Name="Dispersion" ColumnName="Dispersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Singins">
+            <EntityTypeMapping TypeName="HairStudioModel.Singin">
+              <MappingFragment StoreEntitySet="Singin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enqiries">
+            <EntityTypeMapping TypeName="HairStudioModel.Enqiry">
+              <MappingFragment StoreEntitySet="Enqiry">
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+                <ScalarProperty Name="AvaliDate" ColumnName="AvaliDate" />
+                <ScalarProperty Name="EQDate" ColumnName="EQDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Remaiders">
+            <EntityTypeMapping TypeName="HairStudioModel.Remaider">
+              <MappingFragment StoreEntitySet="Remaider">
+                <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
